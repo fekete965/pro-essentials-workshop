@@ -2,6 +2,7 @@
 
 // How do we type 'items' in the ShoppingCart?
 type ShoppingCart = {
+  items: string[];
   userId: string;
 };
 
