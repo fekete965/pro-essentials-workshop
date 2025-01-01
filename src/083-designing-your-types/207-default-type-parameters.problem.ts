@@ -1,6 +1,6 @@
 import { Equal, Expect } from "@total-typescript/helpers";
 
-type Result<TResult, TError> =
+type Result<TResult = unknown, TError = Error> =
   | {
       success: true;
       data: TResult;

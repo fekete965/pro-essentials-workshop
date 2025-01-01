@@ -6,10 +6,12 @@ const findUsersByName = (
   users: {
     id: string;
     name: string;
-  }[],
+  }[]
 ) => {
-  if (searchParams.name) {
-    return users.filter((user) => user.name.includes(searchParams.name));
+  const searchParamName = searchParams.name;
+
+  if (searchParamName) {
+    return users.filter((user) => user.name.includes(searchParamName));
   }
 
   return users;
@@ -29,7 +31,7 @@ it("Should find the exact name", () => {
         id: "2",
         name: "Alice",
       },
-    ],
+    ]
   );
 
   expect(result).toEqual([

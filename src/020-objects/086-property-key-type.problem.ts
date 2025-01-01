@@ -1,6 +1,8 @@
 import { expect, it } from "vitest";
 
-const hasKey = (obj: object, key: string) => {
+type Key = string | symbol | number;
+
+const hasKey = (obj: object, key: PropertyKey) => {
   return obj.hasOwnProperty(key);
 };
 

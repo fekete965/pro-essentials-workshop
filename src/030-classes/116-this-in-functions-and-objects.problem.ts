@@ -1,13 +1,18 @@
 import { it, expect } from "vitest";
 
-function add() {
+type Coordinates = {
+  x: number;
+  y: number;
+};
+
+function add(this: Coordinates) {
   return this.x + this.y;
 }
 
-const setValues = (x: number, y: number) => {
+function setValues(this: Coordinates, x: number, y: number) {
   this.x = x;
   this.y = y;
-};
+}
 
 it("Should add the numbers together", () => {
   const calculator = {

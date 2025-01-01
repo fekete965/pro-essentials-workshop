@@ -1,5 +1,5 @@
 const getResolvedIconSize = (
-  iconSize: "small" | "medium" | "large" | string,
+  iconSize: "small" | "medium" | "large" | (string & {})
 ) => {
   switch (iconSize) {
     case "small":

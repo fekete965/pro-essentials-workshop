@@ -26,9 +26,17 @@ type Entity = User | Organisation | Product;
 type EntityWithoutId = Omit<Entity, "id">;
 //   ^?
 
+type DistributiveOmit<T, K extends PropertyKey> = T extends any
+  ? Omit<T, K>
+  : never;
+
+type StrictOmit<T extends object, K extends keyof T> = Omit<T, K>;
+
+type DistributiveEntityWithoutId = DistributiveOmit<Entity, "id">;
+
 type test = Expect<
   Equal<
-    EntityWithoutId,
+    DistributiveEntityWithoutId,
     | {
         name: string;
         age: number;

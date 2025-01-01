@@ -6,8 +6,10 @@ interface FormValues {
   password: string;
 }
 
+type FormKeys = keyof FormValues;
+
 const inputs: Record<
-  "name" | "email" | "password",
+  FormKeys,
   {
     initialValue: string;
     label: string;

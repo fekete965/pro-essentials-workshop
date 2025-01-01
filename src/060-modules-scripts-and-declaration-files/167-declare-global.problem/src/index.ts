@@ -1,8 +1,11 @@
 import { Equal, Expect } from "@total-typescript/helpers";
 
-declare const DEBUG: {
-  getState(): { id: string };
-};
+// Or use a declaration file
+// declare global {
+//   const DEBUG: {
+//     getState(): { id: string };
+//   };
+// }
 
 const state = DEBUG.getState();
 
